@@ -100,20 +100,25 @@ form.addEventListener('submit', function(event) {
   const depart = departureSelect.firstElementChild.innerText.toLowerCase();
   const destination = destinationSelect.firstElementChild.innerText.toLowerCase();
   
-  function chercherBus(depart, destination) {
-  let busList = [];
+  function chercherTousLesBus(depart, destination) {
+  const busList = [];
   for (const bus in busRoutes) {
     const itineraire = busRoutes[bus];
     if (itineraire.includes(depart) && itineraire.includes(destination)) {
       busList.push(bus);
     }
   }
-  if (busList.length === 0) {
-    return null;
-  } else if (busList.length === 1) {
-    return `Le bus convenable est le ${busList[0]}.`;
-  } else {
-    const busListStr = busList.join(', ');
-    return `Les bus convenables sont : ${busListStr}.`;
-  }
+  return busList;
 }
+
+  
+  const buses = chercherTousLesBus(depart, destination);
+
+if (buses.length === 1) {
+  resultDiv.innerHTML = `Le bus convenable est le ${buses[0]}.`;
+} else if (buses.length > 1) {
+  resultDiv.innerHTML = `Les bus convenables sont les numéros ${buses.join(', ')}.`;
+} else {
+  resultDiv.innerHTML = 'Aucun bus trouvable.';
+}
+
