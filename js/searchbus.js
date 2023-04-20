@@ -4,15 +4,15 @@ selectBtn = wrapper.querySelector(".select-btn"),
 searchInp = wrapper.querySelector("input"),
 options = wrapper.querySelector(".options");
 
-let countries = ["Âaouinate Hajjaj", "Agdal", "Ain Allah", "Ain chkf", "Ain chegag", "Ain Qadous", "Al Jabarri", "Al-Atlas", 
-                    "Av Egypt", "Av. Almanama", "Av. Karim", "Av. Oran", "Av. Zohor", "Av; El Marja", "Av; Zineb", "Bab Al khokha", 
-                    "Bab Bou Jeloud", "Bab Ejdid", "Bab Ftouh", "Bab Guissa", "Bab Jyaf", "Ben Debbab", "Ben Slimane", "Bensouda", 
-                    "Bourmana", "Café Almachariq", "Centre ville", "Champ course", "Dhar Lakhmis", "Dokkarat", "Douyet", "Doha",
+let countries = ["Âaouinate Hajjaj", "Agdal", "Ain Allah", "Ain chkef", "Ain chegag", "Ain Qadous", "Al Jabarri", "Al-Atlas", 
+                    "Av Egypt", "Av. Almanama", "Av. Karim", "Av. Oran", "Av. Zohor", "Av. El Marja", "Av. Zineb", "Bab Al khokha", 
+                    "Bab Bou Jeloud", "Bab Ejdid", "Bab Ftouh", "Bab Guissa", "Bab Jyaf", "Ben Debbab", "Ben Slimane", "Bensouda", "Ben Zakor",
+                    "Bourmana", "Café Almachariq", "Centre ville", "Champ course", "Dhar Lakhmis", "Diamant vert" , "Dokkarat", "Douyet", "Doha",
                     "El Bateha", "Faculté Dhar El Mehraz", "Faculté de chariaa", "Faculté de Médecine", "Faculté des sciences (FST)", 
-                    "Gare de Fès", "Hay Adarissa", "Hay Al Adarissa", "Hay Anass", "Hay Benzakour", "Hay Ennassim", "Hay Es-Saâda", 
+                    "Gare de Fès", "Hay Adarissa", "Hay Al Adarissa", "Hay Anass", "Hay Assalam", "Hay Benzakour", "Hay Ennassim", "Hay Es-Saâda", 
                     "Hay Lalla Soukaina", "Hay Tarik", "La Fiat", "Marjane Oud Fés", "Marjane Sais", "Massira", "Mont Fleuri", "Narjiss",
-                    "Place de Florence", "Rcif", "Route d'Imouzzer", "Route de Sefrou", "Route Ouislane", "Route Meknés", "Rond point airport",
-                    "Rond point signature", "Royal golf", "Sehb Elward", "Sidi Boujida", "Sidi Brahim", "Tajmou3ti", "Zouagha"
+                    "Place de Florence", "Rcif", "Route Ain chkef" ,"Route d'Imouzzer", "Route de Sefrou", "Route Ouislane", "Route Meknés", "Rond point airport",
+                    "Rond point signature", "Royal golf", "Sehb Elward", "Sidi Boujida", "Sidi Brahim", "Tajmouati", "Wlad tiyeb" , "Zouagha"
                 ];
 
                 const destinationWrapper = document.querySelector(".destination-wrapper"),
