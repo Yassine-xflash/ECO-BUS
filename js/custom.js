@@ -103,9 +103,7 @@ form.addEventListener('submit', function(event) {
   function chercherBus(depart, destination) {
   for (const bus in busRoutes) {
     const itineraire = busRoutes[bus];
-    const departIndex = itineraire.indexOf(depart);
-    const destinationIndex = itineraire.indexOf(destination);
-    if (departIndex !== -1 && destinationIndex !== -1 && departIndex < destinationIndex) {
+    if (itineraire.includes(depart) && itineraire.includes(destination)) {
       return bus;
     }
   }
