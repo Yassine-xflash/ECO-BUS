@@ -101,20 +101,22 @@ form.addEventListener('submit', function(event) {
   const destination = destinationSelect.firstElementChild.innerText.toLowerCase();
   
   function chercherBus(depart, destination) {
-  for (const bus in busRoutes) {
-    const itineraire = busRoutes[bus];
-    if (itineraire.includes(depart) && itineraire.includes(destination)) {
-      return bus;
+    const busList = [];
+    for (const bus in busRoutes) {
+      const itineraire = busRoutes[bus];
+      if (itineraire.includes(depart) && itineraire.includes(destination)) {
+        busList.push(bus);
+      }
     }
+    return busList;
   }
-  return null;
-}
 
+  const busList = chercherBus(depart, destination);
 
-  const bus = chercherBus(depart, destination);
-
-  if (bus) {
-    resultDiv.innerHTML = `Le bus convenable est le ${bus}.`;
+  if (busList.length === 1) {
+    resultDiv.innerHTML = `Le bus convenable est le ${busList[0]}.`;
+  } else if (busList.length > 1) {
+    resultDiv.innerHTML = `Les bus convenables sont les suivants : ${busList.join(', ')}.`;
   } else {
     resultDiv.innerHTML = 'Aucun bus convenable n\'a été trouvé.';
   }
