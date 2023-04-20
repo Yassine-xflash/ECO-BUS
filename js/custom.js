@@ -51,11 +51,11 @@
   const form = document.querySelector('.contact-form');
 const resultDiv = document.getElementById('result');
 const busRoutes = {
-  "5": ["Bab Jyaf","Gare de Fès", "Dokkarat",  "Av. Karim", "Av. Zineb", "Av. El Marja"],
-  "10": ["Av Egypt", "Gare de Fès", "Bab Guissa", "Sidi Boujida"],
-  "11": ["El Bateha", "Bab Jyaf",  "Centre ville", "Al-Atlas", "Route de Sefrou", "Av. Zohor"],
-  "12": ["Place de Florence", "Bab Ejdid", "Bab Ftouh"],
-  "13": ["Gare de Fès", "Al-Atlas", "Route d'Imouzzer", "Faculté des sciences (FST)", "Faculté de chariaa"],
+  "5": ["Bab Jyaf","Gare de Fès","Dokkarat","Av. Karim","Av. Zineb","Av. El Marja"],
+  "10": ["Av Egypt","Gare de Fès","Bab Guissa","Sidi Boujida"],
+  "11": ["El Bateha","Bab Jyaf","Centre ville","Al-Atlas","Route de Sefrou","Av. Zohor"],
+  "12": ["Place de Florence","Bab Ejdid","Bab Ftouh"],
+  "13": ["Gare de Fès","Al-Atlas","Route d'Imouzzer","Faculté des sciences (FST)","Faculté de chariaa"],
   "14": ["Zouagha", "Hay Tarik", "Champ course", "Tajmouati", "Bab Jyaf"],
   "15": ["Place de Florence", "Al-Atlas", "Hay Al Adarissa","Route Ain chkef"],
   "16": [],
