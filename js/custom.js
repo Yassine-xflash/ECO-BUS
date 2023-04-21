@@ -51,17 +51,17 @@
   const form = document.querySelector('.contact-form');
 const resultDiv = document.getElementById('result');
 const busRoutes = {
-  "5": ["Bab Jyaf","Gare de Fès","Dokkarat","Av. Karim","Av. Zineb","Av. El Marja"],
-  "10": ["Av Egypt","Gare de Fès","Bab Guissa","Sidi Boujida"],
-  "11": ["El Bateha","Bab Jyaf","Centre ville","Al-Atlas","Route de Sefrou","Av. Zohor"],
-  "12": ["Place de Florence","Bab Ejdid","Bab Ftouh"],
-  "13": ["Gare de Fès","Al-Atlas","Route d'Imouzzer","Faculté des sciences (FST)","Faculté de chariaa"],
-  "14": ["Zouagha","Hay Tarik","Champ course","Tajmouati","Bab Jyaf"],
-  "15": ["Place de Florence","Al-Atlas","Hay Al Adarissa","Route Ain chkef"],
+  "5": ["Bab Jyaf","Gare de Fès", "Dokkarat",  "Av. Karim", "Av. Zineb", "Av. El Marja"],
+  "10": ["Av Egypt", "Gare de Fès", "Bab Guissa", "Sidi Boujida"],
+  "11": ["El Bateha", "Bab Jyaf",  "Centre ville", "Al-Atlas", "Route de Sefrou", "Av. Zohor"],
+  "12": ["Place de Florence", "Bab Ejdid", "Bab Ftouh"],
+  "13": ["Gare de Fès", "Al-Atlas", "Route d'Imouzzer", "Faculté des sciences (FST)", "Faculté de chariaa"],
+  "14": ["Zouagha", "Hay Tarik", "Champ course", "Tajmouati", "Bab Jyaf"],
+  "15": ["Place de Florence", "Al-Atlas", "Hay Al Adarissa","Route Ain chkef"],
   "16": [],
-  "17": ["Al Jabarri","Al-Atlas","Hay Es-Saâda","Hay Adarissa","Route Ain chkef","Ain chkef"],
+  "17": ["Al Jabarri", "Al-Atlas", "Hay Es-Saâda", "Hay Adarissa", "Route Ain chkef", "Ain chkef"],
   "18": [],
-  "19": ["Gare de Fès","Place de Florence","Bab Ejdid", "Rcif"],
+  "19": ["Gare de Fès", "Place de Florence", "Bab Ejdid", "Rcif"],
   "20": ["Place de Florence", "Ben Debbab", "Ben Zakor", "Ben Slimane", "Dhar Lakhmis"],
   "21": [],
   "22": [],
@@ -99,26 +99,24 @@ form.addEventListener('submit', function(event) {
 
   const depart = departureSelect.firstElementChild.innerText.toLowerCase();
   const destination = destinationSelect.firstElementChild.innerText.toLowerCase();
-  
-  function chercherTousLesBus(depart, destination) {
-  const busList = [];
+
+  const bus = chercherBus(depart, destination);
+
+  if (bus) {
+    resultDiv.innerHTML = `Le bus convenable est le ${bus}.`;
+  } else {
+    resultDiv.innerHTML = 'Aucun bus convenable n\'a été trouvé.';
+  }
+});
+
+function chercherBus(depart, destination) {
   for (const bus in busRoutes) {
     const itineraire = busRoutes[bus];
-    if (itineraire.includes(depart) && itineraire.includes(destination)) {
-      busList.push(bus);
+    const departIndex = itineraire.indexOf(depart);
+    const destinationIndex = itineraire.indexOf(destination);
+    if (departIndex !== -1 && destinationIndex !== -1 && departIndex < destinationIndex) {
+      return bus;
     }
   }
-  return busList;
+  return null;
 }
-
-  
-  const buses = chercherTousLesBus(depart, destination);
-
-if (buses.length === 1) {
-  resultDiv.innerHTML = `Le bus convenable est le ${buses[0]}.`;
-} else if (buses.length > 1) {
-  resultDiv.innerHTML = `Les bus convenables sont les numéros ${buses.join(', ')}.`;
-} else {
-  resultDiv.innerHTML = 'Aucun bus trouvable.';
-}
-
