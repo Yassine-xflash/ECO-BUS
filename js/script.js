@@ -30,10 +30,10 @@ calculerVehicule.addEventListener("click", function() {
   let facteurEmission;
   switch (carburant) {
     case "essence":
-      facteurEmission = 0,259;
+      facteurEmission = 0.259;
       break;
     case "diesel":
-      facteurEmission = 0,251;
+      facteurEmission = 0.251;
       break;
     case "hybride":
       facteurEmission = 0.07;
