@@ -1,0 +1,93 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+/*===== VARIABLES CSS =====*/
+
+
+/*===== CARD =====*/
+/*.container_card {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F2F5FF;
+}
+*/
+.card {
+  width: 320px;
+  height: 400px;
+  background-image: url(/images/Shape.png);
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 4rem 2rem 0;
+  color: #6170a1;
+  overflow-y: hidden;
+  position: relative; /* Added */
+}
+
+.card__img {
+  position: absolute;
+  width: 260px;
+  filter: drop-shadow(5px 10px 15px rgba(8,9,13,.4));
+  padding-bottom: 3px;
+}
+
+.card__data {
+  transform: translateY(13.2rem);
+  text-align: center;
+  padding-top: 10px;
+}
+
+.card__title {
+  font-size: 28px;
+  color: var(--first-color2);
+  margin-bottom: .5rem;
+}
+
+.card__preci {
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1.25rem;  
+}
+
+.card__description {
+  font-size: 20px;
+  text-align: initial;
+  margin-bottom: 6px;
+  opacity: 0;
+}
+
+
+.card__img, 
+.card__data, 
+.card__title, 
+.card__preci, 
+.card__description {
+  transition: .5s;
+}
+
+/* Hover card effect */
+.card:hover .card__img {
+  transform: translate(-1.5rem, -9.5rem) rotate(-20deg);
+}
+
+.card:hover .card__data {
+  transform: translateY(4.8rem);
+}
+
+.card:hover .card__title {
+  transform: translateX(-2.3rem);
+  margin-bottom: 0;
+  padding-top: 10px;
+}
+
+.card:hover .card__preci {
+  transform: translateX(-6.8rem);
+  text-align: center;
+  padding-left: 20px;
+}
+
+.card:hover .card__description {
+  transition-delay: .2s;
+  opacity: 1;
+}
